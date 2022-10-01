@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      
+    }
+    #globeViz, #globeViz2 {
+      width: 50%;
+      height: 100%;
+    }
+
+    
+  </style>
+
+  <script src="//unpkg.com/globe.gl"></script>
+  <script src="./_globe.gl.min.js"></script>
+
+  <!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div class="container">
+    <div id="globeViz"></div>
+    <div id="globeViz2"></div>
+  </div>
+
+
+
+  <script>
+
+    const mapWidth = document.body.clientWidth/2;
+    // Gen random data
+    const myGlobe = Globe();
+    myGlobe(document.getElementById('globeViz'))
+      .width(mapWidth)
+      .globeImageUrl('./RenderData.jpeg')
+
+    const myGlobe2 = _Globe();
+    myGlobe2(document.getElementById('globeViz2'))
+      .width(mapWidth)
+      .globeImageUrl('./aerosol_optical.jpeg')
+
+  </script>
+</body>
+
+</html>
